@@ -1,0 +1,11 @@
+wheel (0.24.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Barry Warsaw <barry@debian.org>  Sun, 13 Jul 2014 13:17:07 -0400
+
+wheel (0.23.0-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #745673)
+
+ -- Barry Warsaw <barry@debian.org>  Mon, 05 May 2014 18:02:18 -0400

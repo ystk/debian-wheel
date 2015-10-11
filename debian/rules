@@ -1,0 +1,29 @@
+#!/usr/bin/make -f
+
+export PYBUILD_NAME=wheel
+
+%:
+	dh $@ --with python2,python3 --buildsystem=pybuild
+
+
+override_dh_install:
+	rm -rf debian/python-wheel/usr/bin
+	dh_install
+
+
+override_dh_installman:
+	(cd debian/manpages; \
+	 sphinx-build -b man -d _build/doctrees . _build/man)
+	dh_installman
+
+
+override_dh_python3:
+	dh_python3 --shebang=/usr/bin/python3
+	mkdir -p debian/python-wheel-common/usr
+	mv debian/python3-wheel/usr/bin debian/python-wheel-common/usr
+	rm -rf debian/python3-wheel/usr/lib/python3.?/*-packages/*.egg-info
+
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -rf debian/manpages/_build

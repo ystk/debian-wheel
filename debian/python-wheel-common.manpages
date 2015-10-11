@@ -1,0 +1,3 @@
+debian/manpages/_build/man/wheel.1
+debian/manpages/_build/man/egg2wheel.1
+debian/manpages/_build/man/wininst2wheel.1
